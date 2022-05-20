@@ -80,7 +80,7 @@ stages:
                 scriptType: 'bash'
                 scriptLocation: 'inlineScript'
                 inlineScript: |
-                  set -e
+                  set -e # exit immediately if a command exits with a non-sero status
                   deploymentOutput=$(az deployment group create \
                     --name $(Build.BuildNumber) \
                     --resource-group $(ResourceGroupName) \
